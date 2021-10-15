@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        android:padding="10dp"
+        android:text="@string/text_View01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#e17055"
+        android:padding="10dp"
+        android:text="@string/text_View02"
+        app:layout_constraintStart_toStartOf="@+id/textView01"
+        app:layout_constraintTop_toBottomOf="@+id/textView01" />
+
+    <TextView
+        android:id="@+id/textView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff7675"
+        android:padding="10dp"
+        android:text="@string/text_View03"
+        app:layout_constraintStart_toEndOf="@+id/textView02"
+        app:layout_constraintTop_toBottomOf="@+id/textView02" />
+
+    <TextView
+        android:id="@+id/textView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fab1a0"
+        android:padding="10dp"
+        android:text="@string/text_View04"
+        app:layout_constraintStart_toEndOf="@+id/textView03"
+        app:layout_constraintTop_toTopOf="@+id/textView02" />
+</androidx.constraintlayout.widget.ConstraintLayout>

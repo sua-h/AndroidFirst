@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">First App</string>
+    <string name="text_View01">TextView01</string>
+    <string name="text_View02">TextView02</string>
+    <string name="text_View03">TextView03</string>
+    <string name="text_View04">TextView04</string>
 </resources>
