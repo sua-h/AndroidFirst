@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.koreait.first.ch07.BookPersonActivity;
+
 public class MenuActivity extends AppCompatActivity {
 
     @Override
@@ -35,6 +37,10 @@ public class MenuActivity extends AppCompatActivity {
             c = LinearActivity.class;
         } else if (id == R.id.menuBtn3) {
             c = ConstraintActivity.class;
+        } else if (id == R.id.menuBtn4) {
+            c = WriteActivity.class;
+        } else if (id == R.id.menuBtn5) {
+            c = BookPersonActivity.class;
         }
 
         Intent intent = new Intent(this, c);   // new Intent(from, 목적지);
@@ -59,6 +65,8 @@ public class MenuActivity extends AppCompatActivity {
             case "제약레이아웃" :
                 c = ConstraintActivity.class;
                 break;
+            case "글쓰기" :
+                c = WriteActivity.class;
         }
 
         Intent intent = new Intent(this, c);
