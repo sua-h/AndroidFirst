@@ -5,12 +5,23 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.koreait.first.R;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class BookPersonActivity extends AppCompatActivity {
+
     private RecyclerView rvList;
     private PersonAdapter adapter;
+
+    private EditText etName;
+    private EditText etAge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +31,31 @@ public class BookPersonActivity extends AppCompatActivity {
         rvList = findViewById(R.id.rvList);
         adapter = new PersonAdapter();
 
+        etName = findViewById(R.id.etName);
+        etAge = findViewById(R.id.etAge);
+
         rvList.setLayoutManager(new LinearLayoutManager(this));   // vertical
         rvList.setAdapter(adapter);
 
-        adapter.addItem(new Person("홍길동", 20));
-        adapter.addItem(new Person("난다김", 22));
-        adapter.addItem(new Person("블랙보리", 24));
-        adapter.notifyDataSetChanged();
     }
+
+    public void clkReg(View v) {
+        String name = etName.getText().toString();
+        String age = etAge.getText().toString();
+        int intAge = Utils.parseStringToInt(age);
+
+        if (intAge == 0) {
+            Toast.makeText(this, "문제가 발생하였습니다.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Person p = new Person(name, intAge);
+        adapter.addItem(p);
+        adapter.notifyDataSetChanged();
+
+        etName.setText("");
+        etAge.setText("");
+
+    }
+
 }

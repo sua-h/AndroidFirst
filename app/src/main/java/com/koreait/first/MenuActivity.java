@@ -7,9 +7,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koreait.first.ch07.BookPersonActivity;
+import com.koreait.first.picsum.PicsumActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -41,6 +43,10 @@ public class MenuActivity extends AppCompatActivity {
             c = WriteActivity.class;
         } else if (id == R.id.menuBtn5) {
             c = BookPersonActivity.class;
+        } else if (id == R.id.menuBtn6) {
+            c = ImageViewActivity.class;
+        } else if (id == R.id.menuBtn7) {
+            c = PicsumActivity.class;
         }
 
         Intent intent = new Intent(this, c);   // new Intent(from, 목적지);
