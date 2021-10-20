@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/layout/activity_book_person.xml" value="0.1875" />
         <entry key="app/src/main/res/layout/activity_constraint.xml" value="0.35025476679143924" />
         <entry key="app/src/main/res/layout/activity_constraint_exam1.xml" value="0.3645833333333333" />
+        <entry key="app/src/main/res/layout/activity_daily_boxoffice.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/activity_image_view.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/activity_lineaer_exam1.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/activity_linear.xml" value="0.3944086542805825" />
@@ -18,6 +19,7 @@
         <entry key="app/src/main/res/layout/activity_my_write.xml" value="0.2015625" />
         <entry key="app/src/main/res/layout/activity_picsum.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/activity_write.xml" value="0.3645833333333333" />
+        <entry key="app/src/main/res/layout/item_picsum.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/layout/item_textview.xml" value="0.3887375113533152" />
         <entry key="app/src/main/res/layout/person_item.xml" value="0.2015625" />
       </map>
