@@ -1,6 +1,7 @@
 package com.koreait.first.ch10;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +10,6 @@ import android.widget.DatePicker;
 
 import com.koreait.first.R;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -22,14 +20,22 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DailyBoxofficeActivity extends AppCompatActivity {
 
+    private BoxofficeAdapter adapter;
+
     private DatePicker dpTargetDt;
+    private RecyclerView rvList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_boxoffice);
 
+        adapter = new BoxofficeAdapter();
+
         dpTargetDt = findViewById(R.id.dpTargetDt);
+        rvList = findViewById(R.id.rvList);
+
+        rvList.setAdapter(adapter);
     }
 
     private void network(String targetDt) {
@@ -40,7 +46,7 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
 
         KobisService service = rf.create(KobisService.class);
         final String KEY = "1a0a7ecf96ad3364d8de70e91560767a";
-        Call<BoxOfficeResultBodyVO> call = service.boxofficeSearchDailyBoxOfficeList(KEY, targetDt);
+        Call<BoxOfficeResultBodyVO> call = service.searchDailyBoxOfficeList(KEY, targetDt);
 
         call.enqueue(new Callback<BoxOfficeResultBodyVO>() {
             @Override
@@ -50,12 +56,8 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
                     BoxOfficeResultVO resultVo = vo.getBoxOfficeResult();
                     List<DailyBoxOfficeVO> list = resultVo.getDailyBoxOfficeList();
 
-                    Log.i("myLog", list.size() + "개");
-
-
-                    for(DailyBoxOfficeVO item : list) {
-                        Log.i("myLog", item.getMovieNm());
-                    }
+                    adapter.setList(list);
+                    adapter.notifyDataSetChanged();
                 }
             }
 
@@ -84,3 +86,4 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
         network(date);
     }
 }
+

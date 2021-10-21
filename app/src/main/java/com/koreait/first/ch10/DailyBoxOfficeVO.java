@@ -4,6 +4,7 @@ public class DailyBoxOfficeVO {
     private String rank;      // 순위
     private String movieNm;   // 영화명
     private String openDt;    // 개봉일
+    private String audiCnt;
 
 
     public String getRank() {
@@ -28,5 +29,13 @@ public class DailyBoxOfficeVO {
 
     public void setOpenDt(String openDt) {
         this.openDt = openDt;
+    }
+
+    public String getAudiCnt() {
+        return this.audiCnt;
+    }
+
+    public void setAudiCnt(String audiCnt) {
+        this.audiCnt = audiCnt;
     }
 }

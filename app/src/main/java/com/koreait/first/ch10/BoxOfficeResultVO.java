@@ -6,6 +6,7 @@ public class BoxOfficeResultVO {
     private String boxofficeType;
     private String showRange;
     private List<DailyBoxOfficeVO> dailyBoxOfficeList;
+    //private List<WeeklyBoxOfficeVO> weeklyBoxOfficeList;
 
     public String getBoxofficeType() {
         return boxofficeType;

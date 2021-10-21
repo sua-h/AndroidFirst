@@ -12,13 +12,32 @@ public class Utils {
 //            // 에러가 발생 하거나 발생하지 않거나 반드시 실행될 구문을 작성
 //        }
 
-        int intVal = 0;
-        try {
-            intVal = Integer.parseInt(val);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        int intVal = 0;
+//        try {
+//            intVal = Integer.parseInt(val);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        return intVal;
 
-        return intVal;
+        return parseStringToInt(val, 0);
+    }
+
+    public static int parseStringToInt(String val, int defVal) {
+        try {
+            return Integer.parseInt(val);
+        } catch(Exception e) {
+            return defVal;
+        }
+    }
+
+    public static String getNumberComma(int val) {
+        return String.format("%,d", val);
+    }
+
+    public static String getNumberComma(String val) {
+        int intVal = parseStringToInt(val);
+        return getNumberComma(intVal);
     }
 }
