@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.DatePicker;
 
 import com.koreait.first.R;
+import com.koreait.first.ch10.boxofficemodel.BoxOfficeResultBodyVO;
+import com.koreait.first.ch10.boxofficemodel.BoxOfficeResultVO;
+import com.koreait.first.ch10.boxofficemodel.BoxOfficeVO;
 
 import java.util.List;
 
@@ -20,30 +23,32 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DailyBoxofficeActivity extends AppCompatActivity {
 
-    private BoxofficeAdapter adapter;
+    private KobisBoxofficeAdapter adapter;
 
     private DatePicker dpTargetDt;
     private RecyclerView rvList;
+
+    private Retrofit rf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_boxoffice);
 
-        adapter = new BoxofficeAdapter();
+        adapter = new KobisBoxofficeAdapter();
 
         dpTargetDt = findViewById(R.id.dpTargetDt);
         rvList = findViewById(R.id.rvList);
 
         rvList.setAdapter(adapter);
-    }
 
-    private void network(String targetDt) {
-        Retrofit rf = new Retrofit.Builder()
+        rf = new Retrofit.Builder()
                 .baseUrl("https://www.kobis.or.kr/kobisopenapi/webservice/rest/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+    }
 
+    private void network(String targetDt) {
         KobisService service = rf.create(KobisService.class);
         final String KEY = "1a0a7ecf96ad3364d8de70e91560767a";
         Call<BoxOfficeResultBodyVO> call = service.searchDailyBoxOfficeList(KEY, targetDt);
@@ -54,7 +59,7 @@ public class DailyBoxofficeActivity extends AppCompatActivity {
                 if(res.isSuccessful()) {
                     BoxOfficeResultBodyVO vo = res.body();
                     BoxOfficeResultVO resultVo = vo.getBoxOfficeResult();
-                    List<DailyBoxOfficeVO> list = resultVo.getDailyBoxOfficeList();
+                    List<BoxOfficeVO> list = resultVo.getDailyBoxOfficeList();
 
                     adapter.setList(list);
                     adapter.notifyDataSetChanged();

@@ -16,11 +16,13 @@
         <entry key="app/src/main/res/layout/activity_linear_exam2.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3407532385413496" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/activity_movie_list.xml" value="0.36231884057971014" />
         <entry key="app/src/main/res/layout/activity_my_write.xml" value="0.2015625" />
         <entry key="app/src/main/res/layout/activity_picsum.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/activity_weekly_boxoffice.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_write.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/item_daily_boxoffice.xml" value="0.3691123188405797" />
+        <entry key="app/src/main/res/layout/item_movie.xml" value="0.3521501766534957" />
         <entry key="app/src/main/res/layout/item_picsum.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/layout/item_textview.xml" value="0.3887375113533152" />
         <entry key="app/src/main/res/layout/person_item.xml" value="0.2015625" />
