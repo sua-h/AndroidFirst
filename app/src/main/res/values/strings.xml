@@ -4,4 +4,10 @@
     <string name="text_View02">TextView02</string>
     <string name="text_View03">TextView03</string>
     <string name="text_View04">TextView04</string>
+
+    <string name="actor_label_1">배우명 :</string>
+    <string name="actor_label_2">배우명(영어) :</string>
+    <string name="actor_label_3">배역 :</string>
+    <string name="actor_label_4">배역(영어) :</string>
+
 </resources>
